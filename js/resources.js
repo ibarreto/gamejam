@@ -23,7 +23,7 @@ game.resources = [
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/", channel : 1},
 	 */	
 	{name: "maintheme",		type: "audio",	src: "data/bgm/",	channel : 1},
-	//{name: "imagine",		type: "audio",	src: "data/bgm/",	channel : 1},
+	{name: "imagine",		type: "audio",	src: "data/bgm/",	channel : 1},
 	
 	/* Sound effects. 
 	 * @example

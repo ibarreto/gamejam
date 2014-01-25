@@ -77,6 +77,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
 		if (me.input.isKeyPressed("goToImaginary")) {
                 me.levelDirector.nextLevel();
+                me.audio.stopTrack("maintheme");
+                me.audio.playTrack("imagine");
                 return false;
         }
 
@@ -225,6 +227,8 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 
         if (me.input.isKeyPressed("goToReal")) {
                 me.levelDirector.previousLevel();
+                me.audio.stopTrack("imagine");
+                me.audio.playTrack("maintheme");
                 return false;
         }
 			
