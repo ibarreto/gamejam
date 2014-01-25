@@ -19,7 +19,7 @@ var game = {
 	
 		// init the video
 		if (!me.video.init('screen', 800, 600, true, 'auto')) {
-			alert("Your browser does not support HTML5 canvas!");
+			alert("Sorry but your browser does not support html 5 canvas. Please try with another one!");
 			return;
 		}
 
@@ -61,6 +61,8 @@ var game = {
 		me.entityPool.add("SlimeEntity", game.SlimeEnemyEntity);
 		me.entityPool.add("FlyEntity", game.FlyEnemyEntity);
 		me.entityPool.add("CoinEntity", game.CoinEntity);
+		me.input.bindKey(me.input.KEY.W, "levelskip", true);
+		me.input.bindKey(me.input.KEY.Q, "levelprev", true);
 		
 		// load the texture atlas file
 		// this will be used by object entities later

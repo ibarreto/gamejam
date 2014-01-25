@@ -1,21 +1,4 @@
-/**
- * Dinasaur Entity
- */
-
-game.DinasaurEntity = me.ObjectEntity.extend({
-	init: function(x, y, settings) {
-		this.parent(x, y, settings);
-		this.alwaysUpdate = true;
-
-		// walking & jumping speed
-		this.setVelocity(3, 20);
-		this.setFriction(0.4, 0);
-
-
-	}
-})
-
-
+var otherMap = 1;
 /************************************************************************************/
 /*																					*/
 /*		a player entity																*/
@@ -49,22 +32,22 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		me.input.bindKey(me.input.KEY.UP,	"up");
 		me.input.bindKey(me.input.KEY.DOWN,	"down");
 
-		me.input.bindKey(me.input.KEY.A,	 "left");
-		me.input.bindKey(me.input.KEY.D, "right");
-		me.input.bindKey(me.input.KEY.W,	"up");
-		me.input.bindKey(me.input.KEY.S,	"down");
+		/* test state change */
+
+
+		/* end test */
+
+
 
 		
 		// set a renderable
 		this.renderable = game.texture.createAnimationFromName([
-			"walk0001.png", "walk0002.png", "walk0003.png",
-			"walk0004.png", "walk0005.png", "walk0006.png",
-			"walk0007.png", "walk0008.png", "walk0009.png",
-			"walk0010.png", "walk0011.png"
-		]);
+			"rexwalk1.png", "rexwalk2.png", "rexwalk3.png",
+			"rexwalk4.png", "rexwalk5.png"
+			]);
 		
 		// define a basic walking animation
-		this.renderable.addAnimation ("walk",  ["walk0001.png", "walk0002.png", "walk0003.png"]);
+		this.renderable.addAnimation ("walk",  ["rexwalk1.png", "rexwalk2.png", "rexwalk3.png", "rexwalk4.png", "rexwalk5.png"]);
 		// set as default
 		this.renderable.setCurrentAnimation("walk");
 
@@ -99,6 +82,16 @@ game.PlayerEntity = me.ObjectEntity.extend({
 				me.audio.play("jump", false);
 			}
 		}
+
+		if (me.input.isKeyPressed("levelskip")) {
+                me.levelDirector.nextLevel();
+                return false;
+            }
+
+            if (me.input.isKeyPressed("levelprev")) {
+                me.levelDirector.previousLevel();
+                return false;
+            }
 			
 		// check for collision with environment
 		this.updateMovement();
