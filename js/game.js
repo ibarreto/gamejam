@@ -31,7 +31,7 @@ var game = {
 		}
 		
 		// initialize the "sound engine"
-		me.audio.init("mp3,ogg");
+		me.audio.init("mp3");
 		
 		// set all ressources to be loaded
 		me.loader.onload = this.loaded.bind(this);
