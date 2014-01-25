@@ -57,12 +57,13 @@ var game = {
 		
 		// add our player entity in the entity pool
 		me.entityPool.add("mainPlayer", game.PlayerEntity);
+		me.entityPool.add("dinasaurPlayer", game.DinasaurEntity);
 		// add our enemy entity in the entity pool
 		me.entityPool.add("SlimeEntity", game.SlimeEnemyEntity);
 		me.entityPool.add("FlyEntity", game.FlyEnemyEntity);
 		me.entityPool.add("CoinEntity", game.CoinEntity);
-		me.input.bindKey(me.input.KEY.W, "levelskip", true);
-		me.input.bindKey(me.input.KEY.Q, "levelprev", true);
+		me.input.bindKey(me.input.KEY.W, "goToImaginary", true);
+		me.input.bindKey(me.input.KEY.Q, "goToReal", true);
 		
 		// load the texture atlas file
 		// this will be used by object entities later

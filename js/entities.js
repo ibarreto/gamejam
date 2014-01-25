@@ -1,4 +1,3 @@
-var otherMap = 1;
 /************************************************************************************/
 /*																					*/
 /*		a player entity																*/
@@ -32,12 +31,154 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		me.input.bindKey(me.input.KEY.UP,	"up");
 		me.input.bindKey(me.input.KEY.DOWN,	"down");
 
-		/* test state change */
+		
+		// set a renderable
+		this.renderable = game.texture.createAnimationFromName([
+			"kidwalk1.png", "kidwalk2.png", "kidwalk3.png",
+			"kidwalk4.png", "kidwalk5.png"
+			]);
+		
+		// define a basic walking animation
+		this.renderable.addAnimation ("walk",  ["kidwalk1.png", "kidwalk2.png", "kidwalk3.png", "kidwalk4.png", "kidwalk5.png"]);
+		// set as default
+		this.renderable.setCurrentAnimation("walk");
 
+		// set the renderable position to bottom center
+		this.anchorPoint.set(0.5, 1.0);
+	},
+	
+	/* -----
 
-		/* end test */
+		update the player pos
+		
+	------			*/
+	update : function () {
+		
+		if (me.input.isKeyPressed('left'))	{
+			this.vel.x -= this.accel.x * me.timer.tick;
+			this.flipX(true);
+		} else if (me.input.isKeyPressed('right')) {
+			this.vel.x += this.accel.x * me.timer.tick;
+			this.flipX(false);
+		}
+		
+		if (me.input.isKeyPressed('jump')) {
+			this.jumping = true;
 
+			// reset the dblJump flag if off the ground
+			this.mutipleJump = (this.vel.y === 0)?1:this.mutipleJump;
+			
+			if (this.mutipleJump<=2) {
+				// easy 'math' for double jump
+				this.vel.y -= (this.maxVel.y * this.mutipleJump++) * me.timer.tick;
+				me.audio.play("jump", false);
+			}
+		}
 
+		if (me.input.isKeyPressed("goToImaginary")) {
+                me.levelDirector.nextLevel();
+                
+                return false;
+        }
+
+			
+		// check for collision with environment
+		this.updateMovement();
+		
+		// check if we fell into a hole
+		if (!this.inViewport && (this.pos.y > me.video.getHeight())) {
+			// if yes reset the game
+			me.game.remove(this);
+			me.game.viewport.fadeIn('#fff', 150, function(){
+				me.audio.play("die", false);
+				me.levelDirector.reloadLevel();
+				me.game.viewport.fadeOut('#fff', 150);
+			});
+			return true;
+		}
+		
+		// check for collision with sthg
+		var res = me.game.collide(this);
+
+		if (res) {
+			switch (res.obj.type) {	
+				case me.game.ENEMY_OBJECT : {
+					if ((res.y>0) && this.falling) {
+						// jump
+						this.vel.y -= this.maxVel.y * me.timer.tick;
+					} else {
+						this.hurt();
+					}
+					break;
+				}
+				
+				case "spikeObject" :{
+					// jump & die
+					this.vel.y -= this.maxVel.y * me.timer.tick;
+					this.hurt();
+					break;
+				}
+
+				default : break;
+			}
+		}
+		
+		// check if we moved (a "stand" animation would definitely be cleaner)
+		if (this.vel.x!=0 || this.vel.y!=0 || (this.renderable&&this.renderable.isFlickering())) {
+			this.parent();
+			return true;
+		}
+		
+		return false;
+	},
+
+	
+	/**
+	 * ouch
+	 */
+	hurt : function () {
+		if (!this.renderable.flickering)
+		{
+			this.renderable.flicker(45);
+			// flash the screen
+			me.game.viewport.fadeIn("#FFFFFF", 75);
+			me.audio.play("die", false);
+		}
+	}
+});
+
+/************************************************************************************/
+/*																					*/
+/*		a dinasaur entity																*/
+/*																					*/
+/************************************************************************************/
+game.DinasaurEntity = me.ObjectEntity.extend({	
+	init: function(x, y, settings) {
+		// call the constructor
+		this.parent(x, y , settings);
+
+		// player can exit the viewport (jumping, falling into a hole, etc.)
+		this.alwaysUpdate = true;
+
+		// walking & jumping speed
+		this.setVelocity(3, 15);
+		this.setFriction(0.4,0);
+		
+		// update the hit box
+		this.updateColRect(20,32, -1,0);
+		this.dying = false;
+		
+		this.mutipleJump = 1;
+
+		// set the display around our position
+		me.game.viewport.follow(this, me.game.viewport.AXIS.HORIZONTAL);
+				
+		// enable keyboard
+		me.input.bindKey(me.input.KEY.LEFT,	 "left");
+		me.input.bindKey(me.input.KEY.RIGHT, "right");
+		me.input.bindKey(me.input.KEY.Z,	"jump", true);
+		me.input.bindKey(me.input.KEY.UP,	"up");
+		me.input.bindKey(me.input.KEY.DOWN,	"down");
 
 		
 		// set a renderable
@@ -83,15 +224,10 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			}
 		}
 
-		if (me.input.isKeyPressed("levelskip")) {
-                me.levelDirector.nextLevel();
-                return false;
-            }
-
-            if (me.input.isKeyPressed("levelprev")) {
+        if (me.input.isKeyPressed("goToReal")) {
                 me.levelDirector.previousLevel();
                 return false;
-            }
+        }
 			
 		// check for collision with environment
 		this.updateMovement();
