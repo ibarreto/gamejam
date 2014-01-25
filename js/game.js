@@ -63,6 +63,7 @@ var game = {
 		me.entityPool.add("SlimeEntity", game.SlimeEnemyEntity);
 		me.entityPool.add("FlyEntity", game.FlyEnemyEntity);
 		me.entityPool.add("CoinEntity", game.CoinEntity);
+		me.entityPool.add("DinoStuffyEntity", game.DinoStuffyEntity);
 		me.input.bindKey(me.input.KEY.W, "goToImaginary", true);
 		me.input.bindKey(me.input.KEY.Q, "goToReal", true);
 		

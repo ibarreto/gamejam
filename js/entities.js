@@ -85,7 +85,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
 		if (me.input.isKeyPressed("drop") && game.data.dino == 1) {
 		//if (me.input.isKeyPressed("drop")) {
-            var stuffy = new game.CoinEntity(this.pos.x, this.pos.y+90, me.ObjectSettings);
+            var stuffy = new game.DinoStuffyEntity(this.pos.x, this.pos.y+90, me.ObjectSettings);
             me.game.add(stuffy);
 			game.data.dino = 0;
         }
@@ -333,6 +333,43 @@ game.CoinEntity = me.CollectableEntity.extend({
 		//me.audio.play("cling", false);
 		// give some score
 		game.data.score += 250;
+		
+		//avoid further collision and delete it
+		this.collidable = false;
+		me.game.remove(this);
+	}
+	
+});
+
+/**
+ * a dinosaur (collectable) stuffy
+ */
+game.DinoStuffyEntity = me.CollectableEntity.extend({	
+	/** 
+	 * constructor
+	 */
+	init: function (x, y, settings) {
+		
+		// call the parent constructor
+		this.parent(x, y , settings);
+
+		// add the coin sprite as renderable
+		this.renderable = game.texture.createSpriteFromName("coin.png");
+		
+		// set the renderable position to bottom center
+		this.anchorPoint.set(0.5, 1.0);
+		
+	},		
+	
+	/** 
+	 * collision handling
+	 */
+	onCollision : function () {
+		// do something when collide
+		//me.audio.play("cling", false);
+		// give some score
+		game.data.score += 250;
+		game.data.dino = 1;
 		
 		//avoid further collision and delete it
 		this.collidable = false;
