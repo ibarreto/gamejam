@@ -4,7 +4,9 @@ game.resources = [
 	 * @example
 	 * {name: "example", type:"image", src: "data/img/example.png"},
 	 */
-	{name: "tileset",		type:"image",	src: "data/img/tileset.png"},
+	{name: "area01_level_tiles",		type:"image",	src: "data/map/area01_level_tiles.png"},
+	{name: "grunge_tileset1",		type:"image",	src: "data/map/grunge_tileset1.png"},
+	{name: "imaginarytileset_wip",		type:"image",	src: "data/map/imaginarytileset_wip.png"},
 	{name: "atascii",		type:"image",	src: "data/img/atascii_24px.png"},
 	{name: "background",	type:"image",	src: "data/img/background.png"},	
 	
@@ -14,8 +16,9 @@ game.resources = [
 	 * {name: "example01", type: "tmx", src: "data/map/example01.tmx"},
 	 * {name: "example01", type: "tmx", src: "data/map/example01.json"},
  	 */
-	{name: "map1",			type: "tmx",	src: "data/map/map1.tmx"},
-	{name: "map2",			type: "tmx",	src: "data/map/map2.tmx"},
+	//{name: "map1",			type: "tmx",	src: "data/map/map1.tmx"},
+	//{name: "map2",			type: "tmx",	src: "data/map/map2.tmx"},
+	{name: "sample",		type: "tmx",	src: "data/map/sample.tmx"},
 
 
 	/* Background music. 
