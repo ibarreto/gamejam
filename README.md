@@ -1,4 +1,7 @@
 gamejam
 =======
 
-Eyes Wide Shut (?)
+Imagosaur (?)
+Here there be dinosaurs! (?)
+Technicolour Dinosaur Adventure (?)
+
