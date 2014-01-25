@@ -12,7 +12,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		this.alwaysUpdate = true;
 
 		// walking & jumping speed
-		this.setVelocity(3, 15);
+		this.setVelocity(3, 8);
 		this.setFriction(0.4,0);
 		
 		// update the hit box
@@ -77,7 +77,6 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
 		if (me.input.isKeyPressed("goToImaginary")) {
                 me.levelDirector.nextLevel();
-                
                 return false;
         }
 
