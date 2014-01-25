@@ -68,10 +68,10 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			// reset the dblJump flag if off the ground
 			this.mutipleJump = (this.vel.y === 0)?1:this.mutipleJump;
 			
-			if (this.mutipleJump<=2) {
+			if (this.mutipleJump<=1) {
 				// easy 'math' for double jump
 				this.vel.y -= (this.maxVel.y * this.mutipleJump++) * me.timer.tick;
-				me.audio.play("jump", false);
+				me.audio.play("jumpkid", false);
 			}
 		}
 
@@ -89,7 +89,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			// if yes reset the game
 			me.game.remove(this);
 			me.game.viewport.fadeIn('#fff', 150, function(){
-				me.audio.play("die", false);
+				//me.audio.play("die", false);
 				me.levelDirector.reloadLevel();
 				me.game.viewport.fadeOut('#fff', 150);
 			});
@@ -141,7 +141,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			this.renderable.flicker(45);
 			// flash the screen
 			me.game.viewport.fadeIn("#FFFFFF", 75);
-			me.audio.play("die", false);
+			//me.audio.play("die", false);
 		}
 	}
 });
@@ -219,7 +219,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			if (this.mutipleJump<=2) {
 				// easy 'math' for double jump
 				this.vel.y -= (this.maxVel.y * this.mutipleJump++) * me.timer.tick;
-				me.audio.play("jump", false);
+				me.audio.play("jumpdino", false);
 			}
 		}
 
@@ -236,7 +236,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			// if yes reset the game
 			me.game.remove(this);
 			me.game.viewport.fadeIn('#fff', 150, function(){
-				me.audio.play("die", false);
+				//me.audio.play("die", false);
 				me.levelDirector.reloadLevel();
 				me.game.viewport.fadeOut('#fff', 150);
 			});
@@ -288,7 +288,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			this.renderable.flicker(45);
 			// flash the screen
 			me.game.viewport.fadeIn("#FFFFFF", 75);
-			me.audio.play("die", false);
+			//me.audio.play("die", false);
 		}
 	}
 });
@@ -318,7 +318,7 @@ game.CoinEntity = me.CollectableEntity.extend({
 	 */
 	onCollision : function () {
 		// do something when collide
-		me.audio.play("cling", false);
+		//me.audio.play("cling", false);
 		// give some score
 		game.data.score += 250;
 		
@@ -408,7 +408,7 @@ game.PathEnemyEntity = me.ObjectEntity.extend({
 			var self = this;
 			this.renderable.flicker(45, function(){me.game.remove(self)});
 			// dead sfx
-			me.audio.play("enemykill", false);
+			//me.audio.play("enemykill", false);
 			// give some score
 			game.data.score += 150;
 		}

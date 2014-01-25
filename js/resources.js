@@ -23,15 +23,16 @@ game.resources = [
 	 * {name: "example_bgm", type: "audio", src: "data/bgm/", channel : 1},
 	 */	
 	{name: "maintheme",		type: "audio",	src: "data/bgm/",	channel : 1},
+	//{name: "imagine",		type: "audio",	src: "data/bgm/",	channel : 1},
 	
 	/* Sound effects. 
 	 * @example
 	 * {name: "example_sfx", type: "audio", src: "data/sfx/", channel : 2}
 	 */
-	{name: "cling",			type: "audio",	src: "data/sfx/",	channel : 2},
-	{name: "die",			type: "audio",	src: "data/sfx/",	channel : 1},
-	{name: "enemykill",		type: "audio",	src: "data/sfx/",	channel : 1},
-	{name: "jump",			type: "audio",	src: "data/sfx/",	channel : 2},
+	//{name: "cling",			type: "audio",	src: "data/sfx/",	channel : 2},
+	//{name: "die",			type: "audio",	src: "data/sfx/",	channel : 1},
+	{name: "jumpkid",		type: "audio",	src: "data/sfx/",	channel : 2},
+	{name: "jumpdino",		type: "audio",	src: "data/sfx/",	channel : 2},
 
 	
 	/* Atlases 
