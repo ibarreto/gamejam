@@ -30,6 +30,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		me.input.bindKey(me.input.KEY.Z,	"jump", true);
 		me.input.bindKey(me.input.KEY.UP,	"up");
 		me.input.bindKey(me.input.KEY.DOWN,	"down");
+		me.input.bindKey(me.input.KEY.X,	"drop");
+		
 
 		
 		// set a renderable
@@ -76,10 +78,16 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		}
 
 		if (me.input.isKeyPressed("goToImaginary")) {
-                me.levelDirector.nextLevel();
-                me.audio.stopTrack("maintheme");
-                me.audio.playTrack("imagine");
-                return false;
+            me.levelDirector.nextLevel();
+            me.audio.stopTrack("maintheme");
+            me.audio.playTrack("imagine");
+            return false;
+        }
+		if (me.input.isKeyPressed("drop") && game.data.dino == 1) {
+		//if (me.input.isKeyPressed("drop")) {
+            var stuffy = new game.CoinEntity(this.pos.x, this.pos.y+90, me.ObjectSettings);
+            me.game.add(stuffy);
+			game.data.dino = 0;
         }
 
 			
