@@ -37,11 +37,18 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		// set a renderable
 		this.renderable = game.texture.createAnimationFromName([
 			"kidwalk1.png", "kidwalk2.png", "kidwalk3.png",
-			"kidwalk4.png", "kidwalk5.png"
+			"kidwalk4.png", "kidwalk5.png",
+			"kidwalk_withstuffy1.png", "kidwalk_withstuffy2.png", 
+			"kidwalk_withstuffy3.png", "kidwalk_withstuffy4.png",
+			"kidwalk_withstuffy5.png"
 			]);
 		
-		// define a basic walking animation
+		// define a basic walking animations
 		this.renderable.addAnimation ("walk",  ["kidwalk1.png", "kidwalk2.png", "kidwalk3.png", "kidwalk4.png", "kidwalk5.png"]);
+		//this.renderable.addAnimation ("walkstuffy",  ["kidwalk_withstuffy1.png", "kidwalk_withstuffy2.png", 
+			//	"kidwalk_withstuffy3.png", "kidwalk_withstuffy4.png", "kidwalk_withstuffy5.png"]);
+
+
 		// set as default
 		this.renderable.setCurrentAnimation("walk");
 
@@ -109,6 +116,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			game.data.dinoX = this.pos.x;
 			game.data.dinoY = this.pos.y;
 			//game.data.dinoZ = 1;
+			//this.renderable.setCurrentAnimation("walk");
         }
 
 			
@@ -141,6 +149,13 @@ game.PlayerEntity = me.ObjectEntity.extend({
 					}
 					break;
 				}
+
+				//case me.game.COLLECTABLE_OBJECT : {
+
+					//this.renderable.setCurrentAnimation("walkstuffy");
+
+				//	break;
+			//	}
 				
 				case "spikeObject" :{
 					// jump & die
@@ -216,10 +231,16 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		this.renderable = game.texture.createAnimationFromName([
 			"rexwalk1.png", "rexwalk2.png", "rexwalk3.png",
 			"rexwalk4.png", "rexwalk5.png"
+			//"rexwalk1_withkid.png", "rexwalk2_withkid.png",
+			//"rexwalk3_withkid.png", "rexwalk4_withkid.png",
+			//"rexwalk5_withkid.png"
 			]);
 		
 		// define a basic walking animation
 		this.renderable.addAnimation ("walk",  ["rexwalk1.png", "rexwalk2.png", "rexwalk3.png", "rexwalk4.png", "rexwalk5.png"]);
+		//this.renderable.addAnimation ("walkkid",  ["rexwalk1_withkid.png", "rexwalk2_withkid.png", "rexwalk3_withkid.png",
+			//	"rexwalk4_withkid.png", "rexwalk5_withkid.png"]);
+
 		// set as default
 		this.renderable.setCurrentAnimation("walk");
 
@@ -285,6 +306,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
 			//game.data.kidZ = 1;
+			//this.renderable.setCurrentAnimation("walk");
         }	
 		// check for collision with environment
 		this.updateMovement();
@@ -307,15 +329,13 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 
 		if (res) {
 			switch (res.obj.type) {	
-				case me.game.ENEMY_OBJECT : {
-					if ((res.y>0) && this.falling) {
-						// jump
-						this.vel.y -= this.maxVel.y * me.timer.tick;
-					} else {
-						this.hurt();
-					}
-					break;
-				}
+
+			//	case me.game.COLLECTABLE_OBJECT : {
+
+					//this.renderable.setCurrentAnimation("walkkid");
+
+			//		break;
+			//	}
 				
 				case "spikeObject" :{
 					// jump & die

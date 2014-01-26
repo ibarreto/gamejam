@@ -81,6 +81,46 @@
 	"sourceSize": {"w":49,"h":57}
 },
 {
+	"filename": "kidwalk_withstuffy1.png",
+	"frame": {"x":229,"y":2,"w":49,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
+	"sourceSize": {"w":49,"h":57}
+},
+{
+	"filename": "kidwalk_withstuffy2.png",
+	"frame": {"x":229,"y":67,"w":49,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
+	"sourceSize": {"w":49,"h":57}
+},
+{
+	"filename": "kidwalk_withstuffy3.png",
+	"frame": {"x":229,"y":130,"w":49,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
+	"sourceSize": {"w":49,"h":57}
+},
+{
+	"filename": "kidwalk_withstuffy4.png",
+	"frame": {"x":175,"y":195,"w":49,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
+	"sourceSize": {"w":49,"h":57}
+},
+{
+	"filename": "kidwalk_withstuffy5.png",
+	"frame": {"x":229,"y":195,"w":49,"h":57},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
+	"sourceSize": {"w":49,"h":57}
+},
+{
 	"filename": "rexstuffy.png",
 	"frame": {"x":58,"y":211,"w":23,"h":36},
 	"rotated": false,
@@ -126,6 +166,46 @@
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":44,"h":75},
+	"sourceSize": {"w":52,"h":75}
+},
+{
+	"filename": "rexwalk1_withkid.png",
+	"frame": {"x":281,"y":181,"w":44,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"sourceSize": {"w":52,"h":75}
+},
+{
+	"filename": "rexwalk2_withkid.png",
+	"frame": {"x":281,"y":86,"w":44,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"sourceSize": {"w":52,"h":75}
+},
+{
+	"filename": "rexwalk3_withkid.png",
+	"frame": {"x":281,"y":1,"w":44,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"sourceSize": {"w":52,"h":75}
+},
+{
+	"filename": "rexwalk4_withkid.png",
+	"frame": {"x":336,"y":1,"w":44,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"sourceSize": {"w":52,"h":75}
+},
+{
+	"filename": "rexwalk5_withkid.png",
+	"frame": {"x":336,"y":86,"w":44,"h":75},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
 	"sourceSize": {"w":52,"h":75}
 },
 {
