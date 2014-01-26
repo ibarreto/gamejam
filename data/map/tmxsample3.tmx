@@ -49,4 +49,7 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="cookie" width="64" height="64">
+  <object name="CookieJarEntity" x="389" y="1050" width="54" height="46"/>
+ </objectgroup>
 </map>

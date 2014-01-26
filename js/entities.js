@@ -504,7 +504,7 @@ game.CookieJarEntity = me.CollectableEntity.extend({
 		this.parent(x, y , settings);
 
 		// add the sprite as renderable
-		this.renderable = game.texture.createSpriteFromName("imaginar_world_kid.png"); // change to cookie jar +++++++++++++++++
+		this.renderable = game.texture.createSpriteFromName("cookiejar.png"); // change to cookie jar +++++++++++++++++
 		
 		// set the renderable position to bottom center
 		this.anchorPoint.set(0.5, 1.0);
