@@ -79,7 +79,7 @@ var game = {
 		game.texture = new me.TextureAtlas(me.loader.getJSON("texture"), me.loader.getImage("texture"));
 		
 		// switch to PLAY state
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.MENU);
 	}
 };
 
