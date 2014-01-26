@@ -45,9 +45,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		
 		// define a basic walking animations
 		this.renderable.addAnimation ("walk",  ["kidwalk1.png", "kidwalk2.png", "kidwalk3.png", "kidwalk4.png", "kidwalk5.png"]);
-		//this.renderable.addAnimation ("walkstuffy",  ["kidwalk_withstuffy1.png", "kidwalk_withstuffy2.png", 
-			//	"kidwalk_withstuffy3.png", "kidwalk_withstuffy4.png", "kidwalk_withstuffy5.png"]);
-
+		this.renderable.addAnimation ("walkstuffy",  ["kidwalk_withstuffy1.png", "kidwalk_withstuffy2.png", 
+				"kidwalk_withstuffy3.png", "kidwalk_withstuffy4.png", "kidwalk_withstuffy5.png"]);
 
 		// set as default
 		this.renderable.setCurrentAnimation("walk");
@@ -70,6 +69,9 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			if (game.data.carry == 0) {
 				var stuffy2 = new game.DinoStuffyEntity(game.data.dinoX+20, game.data.dinoY+70, me.ObjectSettings);
 				me.game.add(stuffy2, 2);
+			}
+			else {
+				this.renderable.setCurrentAnimation("walkstuffy");
 			}
 		}
 		if (me.input.isKeyPressed('left'))	{
@@ -116,7 +118,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			game.data.dinoX = this.pos.x;
 			game.data.dinoY = this.pos.y;
 			//game.data.dinoZ = 1;
-			//this.renderable.setCurrentAnimation("walk");
+			this.renderable.setCurrentAnimation("walk");
         }
 
 			
@@ -150,12 +152,12 @@ game.PlayerEntity = me.ObjectEntity.extend({
 					break;
 				}
 
-				//case me.game.COLLECTABLE_OBJECT : {
+				case me.game.COLLECTABLE_OBJECT : {
 
-					//this.renderable.setCurrentAnimation("walkstuffy");
+					this.renderable.setCurrentAnimation("walkstuffy");
 
-				//	break;
-			//	}
+					break;
+				}
 				
 				case "spikeObject" :{
 					// jump & die
@@ -230,16 +232,16 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		// set a renderable
 		this.renderable = game.texture.createAnimationFromName([
 			"rexwalk1.png", "rexwalk2.png", "rexwalk3.png",
-			"rexwalk4.png", "rexwalk5.png"
-			//"rexwalk1_withkid.png", "rexwalk2_withkid.png",
-			//"rexwalk3_withkid.png", "rexwalk4_withkid.png",
-			//"rexwalk5_withkid.png"
+			"rexwalk4.png", "rexwalk5.png",
+			"rexwalk1_withkid.png", "rexwalk2_withkid.png",
+			"rexwalk3_withkid.png", "rexwalk4_withkid.png",
+			"rexwalk5_withkid.png"
 			]);
 		
 		// define a basic walking animation
 		this.renderable.addAnimation ("walk",  ["rexwalk1.png", "rexwalk2.png", "rexwalk3.png", "rexwalk4.png", "rexwalk5.png"]);
-		//this.renderable.addAnimation ("walkkid",  ["rexwalk1_withkid.png", "rexwalk2_withkid.png", "rexwalk3_withkid.png",
-			//	"rexwalk4_withkid.png", "rexwalk5_withkid.png"]);
+		this.renderable.addAnimation ("walkkid",  ["rexwalk1_withkid.png", "rexwalk2_withkid.png", "rexwalk3_withkid.png",
+				"rexwalk4_withkid.png", "rexwalk5_withkid.png"]);
 
 		// set as default
 		this.renderable.setCurrentAnimation("walk");
@@ -262,6 +264,9 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			if (game.data.carry == 0) {
 				var stuffy2 = new game.KidStuffyEntity(game.data.kidX+20, game.data.kidY+50, me.ObjectSettings);
 				me.game.add(stuffy2, 2);
+			}
+			else {
+				this.renderable.setCurrentAnimation("walkkid");
 			}
 		}
 		if (me.input.isKeyPressed('left'))	{
@@ -306,7 +311,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
 			//game.data.kidZ = 1;
-			//this.renderable.setCurrentAnimation("walk");
+			this.renderable.setCurrentAnimation("walk");
         }	
 		// check for collision with environment
 		this.updateMovement();
@@ -329,13 +334,12 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 
 		if (res) {
 			switch (res.obj.type) {	
+				case me.game.COLLECTABLE_OBJECT : {
 
-			//	case me.game.COLLECTABLE_OBJECT : {
+					this.renderable.setCurrentAnimation("walkkid");
 
-					//this.renderable.setCurrentAnimation("walkkid");
-
-			//		break;
-			//	}
+					break;
+				}
 				
 				case "spikeObject" :{
 					// jump & die
