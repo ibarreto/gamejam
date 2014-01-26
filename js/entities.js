@@ -68,7 +68,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			game.data.dinoZ = 0;
 			if (game.data.carry == 0) {
 				var stuffy2 = new game.DinoStuffyEntity(game.data.dinoX+20, game.data.dinoY+70, me.ObjectSettings);
-				me.game.add(stuffy2, 2);
+				me.game.add(stuffy2, 3);
 			}
 			else {
 				this.renderable.setCurrentAnimation("walkstuffy");
@@ -112,7 +112,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		//if (me.input.isKeyPressed("drop")) {
 			this.flipX(false);
             var stuffy = new game.DinoStuffyEntity(this.pos.x+20, this.pos.y+50, me.ObjectSettings);
-            me.game.add(stuffy, 2);
+            me.game.add(stuffy, 3);
 			game.data.carry = 0;
 			game.data.dinoX = this.pos.x;
 			game.data.dinoY = this.pos.y;
@@ -262,7 +262,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			game.data.kidZ = 0;
 			if (game.data.carry == 0) {
 				var stuffy2 = new game.KidStuffyEntity(game.data.kidX+20, game.data.kidY+50, me.ObjectSettings);
-				me.game.add(stuffy2, 2);
+				me.game.add(stuffy2, 3);
 			}
 			else {
 				this.renderable.setCurrentAnimation("walkkid");
@@ -306,7 +306,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		//if (me.input.isKeyPressed("drop")) {
 			this.flipX(false);
             var stuffy = new game.KidStuffyEntity(this.pos.x+20, this.pos.y+70, me.ObjectSettings);
-            me.game.add(stuffy, 2);
+            me.game.add(stuffy, 3);
 			game.data.carry = 0;
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;

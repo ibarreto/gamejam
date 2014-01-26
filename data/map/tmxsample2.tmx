@@ -20,6 +20,12 @@
  <tileset firstgid="286" name="imaginarytileset_wip" tilewidth="32" tileheight="32">
   <image source="imaginarytileset_wip.png" width="640" height="241"/>
  </tileset>
+ <imagelayer name="bg" width="64" height="64">
+  <image source="../img/background.png"/>
+  <properties>
+   <property name="ratio" value="0.15"/>
+  </properties>
+ </imagelayer>
  <layer name="Foreground" width="64" height="64">
   <properties>
    <property name="type" value="platform"/>

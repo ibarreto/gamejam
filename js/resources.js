@@ -10,6 +10,7 @@ game.resources = [
 	{name: "metatiles32x32",			type:"image",	src: "data/map/metatiles32x32.png"},
 	{name: "atascii",					type:"image",	src: "data/img/atascii_24px.png"},
 	{name: "background",				type:"image",	src: "data/img/background.png"},	
+	{name: "background_imaginary",		type:"image",	src: "data/img/background_imaginary.png"},	
 	
 		
 	/* Maps. 
