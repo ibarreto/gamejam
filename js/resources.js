@@ -8,6 +8,7 @@ game.resources = [
 	{name: "grunge_tileset1",			type:"image",	src: "data/map/grunge_tileset1.png"},
 	{name: "imaginarytileset_wip",		type:"image",	src: "data/map/imaginarytileset_wip.png"},
 	{name: "metatiles32x32",			type:"image",	src: "data/map/metatiles32x32.png"},
+	{name: "lava",			type:"image",	src: "data/map/lava.png"},
 	{name: "atascii",					type:"image",	src: "data/img/atascii_24px.png"},
 	{name: "background",				type:"image",	src: "data/img/background.png"},	
 	{name: "background_imaginary",		type:"image",	src: "data/img/background_imaginary.png"},
