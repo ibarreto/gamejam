@@ -346,8 +346,8 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 					break;
 				}
 				
-				case "spikeObject" :{
-					this.setFriction(0.01,0);
+				case "lava" :{
+					me.levelDirector.loadLevel("tmxsample3");
 					break;
 				}
 

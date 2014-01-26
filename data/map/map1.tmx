@@ -60,7 +60,7 @@
     <property name="type" value="spikeObject"/>
    </properties>
   </object>
-  <object name="me.ObjectEntity" gid="20" x="980" y="595">
+  <object name="me.ObjectEntity" gid="20" x="980" y="592">
    <properties>
     <property name="collidable" value="true"/>
     <property name="type" value="spikeObject"/>
