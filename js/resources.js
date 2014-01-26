@@ -9,8 +9,8 @@ game.resources = [
 	{name: "imaginarytileset_wip",		type:"image",	src: "data/map/imaginarytileset_wip.png"},
 	{name: "metatiles32x32",			type:"image",	src: "data/map/metatiles32x32.png"},
 	{name: "atascii",					type:"image",	src: "data/img/atascii_24px.png"},
-	{name: "background",				type:"image",	src: "data/map/background.png"},	
-	{name: "background_imaginary",		type:"image",	src: "data/map/background_imaginary.png"},
+	{name: "background",				type:"image",	src: "data/img/background.png"},	
+	{name: "background_imaginary",		type:"image",	src: "data/img/background_imaginary.png"},
 	{name: "cover_wide",		type:"image",	src: "data/img/cover_wide.png"},
 	{name: "32x32_font",		type:"image",	src: "data/32x32_font.png"},	
 	
