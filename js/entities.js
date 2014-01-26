@@ -347,6 +347,8 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 				}
 				
 				case "lava" :{
+					me.audio.stopTrack("imagine");
+					me.audio.playTrack("maintheme");
 					me.levelDirector.loadLevel("tmxsample3");
 					break;
 				}
