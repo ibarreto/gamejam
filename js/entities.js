@@ -13,7 +13,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
 		// walking & jumping speed
 		this.setVelocity(3, 12);
-		this.setFriction(0.3,0);
+		this.setFriction(0.4,0);
 		
 		// update the hit box
 		this.updateColRect(20,32, -1,0);
@@ -61,7 +61,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		//kidTime += me.timer.getTime();
+		//kidTime -= me.timer.getTime();
 		if (game.data.kidZ != 1) {
 			this.pos.x = game.data.kidX;
 			this.pos.y = game.data.kidY;
@@ -103,11 +103,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
 			// set timer here
-
 			dinoTime = 17 * 75000000000000; //this is approximately 11 seconds 
-
-			//dinoTime = 17 * 75000000000000; //the first number is the number of seconds 
-
 			//game.data.kid = 0;
 			if (game.data.carry == 1) {
 					game.data.dinoX = this.pos.x;
@@ -215,7 +211,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 
 		// walking & jumping speed
 		this.setVelocity(3, 15);
-		this.setFriction(0.4,0);
+		this.setFriction(0.3,0);
 		
 		// update the hit box
 		this.updateColRect(20,32, -1,0);
@@ -611,7 +607,7 @@ game.PathEnemyEntity = me.ObjectEntity.extend({
 	onCollision : function (res, obj) {
 		// res.y >0 means touched by something on the bottom
 		// which mean at top position for this one
-		if (this.alive && (obj.friction == 0.4)) {
+		if (this.alive && (obj.friction == 0.3)) {
 			// make it dead
 			this.alive = false;
 			// and not collidable anymore
