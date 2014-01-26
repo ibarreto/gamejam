@@ -13,7 +13,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
 		// walking & jumping speed
 		this.setVelocity(3, 12);
-		this.setFriction(0.4,0);
+		this.setFriction(0.3,0);
 		
 		// update the hit box
 		this.updateColRect(20,32, -1,0);
@@ -141,15 +141,15 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
 		if (res) {
 			switch (res.obj.type) {	
-				case me.game.ENEMY_OBJECT : {
-					if ((res.y>0) && this.falling) {
+				//case me.game.ENEMY_OBJECT : {
+				//	if ((res.y>0) && this.falling) {
 						// jump
-						this.vel.y -= this.maxVel.y * me.timer.tick;
-					} else {
-						this.hurt();
-					}
-					break;
-				}
+				//		this.vel.y -= this.maxVel.y * me.timer.tick;
+				//	} else {
+				//		this.hurt();
+				//	}
+				//	break;
+				//}
 
 				case me.game.COLLECTABLE_OBJECT : {
 
@@ -160,8 +160,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 				
 				case "spikeObject" :{
 					// jump & die
-					this.vel.y -= this.maxVel.y * me.timer.tick;
-					this.hurt();
+					//this.vel.y -= this.maxVel.y * me.timer.tick;
+					//this.hurt();
 					break;
 				}
 
@@ -342,9 +342,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 				}
 				
 				case "spikeObject" :{
-					// jump & die
-					this.vel.y -= this.maxVel.y * me.timer.tick;
-					this.hurt();
+					this.setFriction(0.01,0);
 					break;
 				}
 
@@ -554,7 +552,7 @@ game.PathEnemyEntity = me.ObjectEntity.extend({
 	onCollision : function (res, obj) {
 		// res.y >0 means touched by something on the bottom
 		// which mean at top position for this one
-		if (this.alive && (res.y > 0) && obj.falling) {
+		if (this.alive && (obj.friction == 0.4)) {
 			// make it dead
 			this.alive = false;
 			// and not collidable anymore
