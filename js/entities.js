@@ -12,7 +12,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		this.alwaysUpdate = true;
 
 		// walking & jumping speed
-		this.setVelocity(3, 15);
+		this.setVelocity(3, 8);
 		this.setFriction(0.4,0);
 		
 		// update the hit box
@@ -70,7 +70,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			// reset the dblJump flag if off the ground
 			this.mutipleJump = (this.vel.y === 0)?1:this.mutipleJump;
 			
-			if (this.mutipleJump<=2) {
+			if (this.mutipleJump<=1) {
 				// easy 'math' for double jump
 				this.vel.y -= (this.maxVel.y * this.mutipleJump++) * me.timer.tick;
 				me.audio.play("jumpkid", false);
@@ -242,9 +242,10 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			
 		// check for collision with environment
 		this.updateMovement();
+		me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
 		
 		// check if we fell into a hole
-		if (!this.inViewport && (this.pos.y > me.video.getHeight())) {
+		/*if (!this.inViewport && (this.pos.y > me.video.getHeight())) {
 			// if yes reset the game
 			me.game.remove(this);
 			me.game.viewport.fadeIn('#fff', 150, function(){
@@ -253,7 +254,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 				me.game.viewport.fadeOut('#fff', 150);
 			});
 			return true;
-		}
+		}*/
 		
 		// check for collision with sthg
 		var res = me.game.collide(this);
