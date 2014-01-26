@@ -96,7 +96,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			}
 		}
 
-		if (me.input.isKeyPressed("goToImaginary") && (kidTime >= (10 * 75000000000000))) {
+		if (me.input.isKeyPressed("goToImaginary")) {
 			me.levelDirector.nextLevel();
             me.audio.stopTrack("maintheme");
             me.audio.playTrack("imagine");
