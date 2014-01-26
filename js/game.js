@@ -15,7 +15,9 @@ var game = {
 		kidZ : 0,
 		dinoX : 400,
 		dinoY : 200,
-		dinoZ : 0
+		dinoZ : 0,
+		dinoTime : 0,
+		kidTime : 0
 	},
 	
 	/**
@@ -55,7 +57,6 @@ var game = {
 	 * callback when everything is loaded
 	 */
 	loaded: function ()	{
-		me.state.set(me.state.MENU, new game.TitleScreen());
 	
 		// set the "Play/Ingame" Screen Object
 		me.state.set(me.state.PLAY, new game.PlayScreen());
@@ -80,7 +81,7 @@ var game = {
 		game.texture = new me.TextureAtlas(me.loader.getJSON("texture"), me.loader.getImage("texture"));
 		
 		// switch to PLAY state
-		me.state.change(me.state.MENU);
+		me.state.change(me.state.PLAY);
 	}
 };
 
