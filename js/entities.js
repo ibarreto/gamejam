@@ -61,7 +61,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		kidTime += me.timer.getTime();
+		//kidTime += me.timer.getTime();
 		if (game.data.kidZ != 1) {
 			this.pos.x = game.data.kidX;
 			this.pos.y = game.data.kidY;
