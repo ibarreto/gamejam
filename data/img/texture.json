@@ -209,6 +209,14 @@
 	"sourceSize": {"w":52,"h":75}
 },
 {
+	"filename": "cookiejar.png",
+	"frame": {"x":148,"y":159,"w":50,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":29},
+	"sourceSize": {"w":50,"h":29}
+},
+{
 	"filename": "slime_dead.png",
 	"frame": {"x":2,"y":231,"w":54,"h":8},
 	"rotated": false,
@@ -218,19 +226,19 @@
 },
 {
 	"filename": "slime_normal.png",
-	"frame": {"x":152,"y":160,"w":43,"h":28},
+	"frame": {"x":148,"y":159,"w":50,"h":29},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":28},
-	"sourceSize": {"w":43,"h":28}
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":29},
+	"sourceSize": {"w":50,"h":29}
 },
 {
 	"filename": "slime_walk.png",
-	"frame": {"x":179,"y":129,"w":43,"h":26},
+	"frame": {"x":179,"y":129,"w":50,"h":29},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":26},
-	"sourceSize": {"w":43,"h":26}
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":29},
+	"sourceSize": {"w":50,"h":29}
 }],
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",

@@ -494,6 +494,56 @@ game.KidStuffyEntity = me.CollectableEntity.extend({
 });
 
 /**
+ * cookie jar collectable end game item
+ */
+game.CookieJarEntity = me.CollectableEntity.extend({	
+	/** 
+	 * constructor
+	 */
+	init: function (x, y, settings) {
+		
+		// call the parent constructor
+		this.parent(x, y , settings);
+
+		// add the sprite as renderable
+		this.renderable = game.texture.createSpriteFromName("imaginar_world_kid.png"); // change to cookie jar +++++++++++++++++
+		
+		// set the renderable position to bottom center
+		this.anchorPoint.set(0.5, 1.0);
+		
+	},		
+	
+	/** 
+	 * collision handling
+	 */
+	onCollision : function () {
+		// do something when collide
+		//me.audio.play("cling", false);
+		// give some score
+		//game.data.score += 250;
+		//game.data.carry = 1;
+
+		/*
+
+		me.state.set(me.state.CREDITS, new game.CreditsScreen());
+
+
+
+		*/
+
+
+
+		
+		//avoid further collision and delete it
+		this.collidable = false;
+		me.game.remove(this);
+	}
+	
+});
+
+
+
+/**
  * An enemy entity
  * follow a horizontal path defined by the box size in Tiled
  */
