@@ -42,8 +42,10 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		
 		// define a basic walking animation
 		this.renderable.addAnimation ("walk",  ["kidwalk1.png", "kidwalk2.png", "kidwalk3.png", "kidwalk4.png", "kidwalk5.png"]);
+		this.renderable.addAnimation ("walkstuffy",  ["kidwalk_withstuffy1.png", "kidwalk_withstuffy2.png", 
+					"kidwalk_withstuffy3.png", "kidwalk_withstuffy4.png", "kidwalk_withstuffy5.png"]);
 		// set as default
-		this.renderable.setCurrentAnimation("walk");
+		this.renderable.setCurrentAnimation("walkstuffy");
 
 		// set the renderable position to bottom center
 		this.anchorPoint.set(0.5, 1.0);
@@ -100,6 +102,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			game.data.dino = 0;
 			game.data.dinoX = this.pos.x;
 			game.data.dinoY = this.pos.y;
+
+			this.renderable.setCurrentAnimation("walk");
 			//game.data.dinoZ = 1;
         }
 
@@ -131,6 +135,13 @@ game.PlayerEntity = me.ObjectEntity.extend({
 					} else {
 						this.hurt();
 					}
+					break;
+				}
+
+				case me.game.COLLECTABLE_OBJECT : {
+
+					this.renderable.setCurrentAnimation("walkstuffy");
+
 					break;
 				}
 				
