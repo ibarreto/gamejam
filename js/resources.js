@@ -14,6 +14,7 @@ game.resources = [
 	{name: "background_imaginary",		type:"image",	src: "data/img/background_imaginary.png"},
 	{name: "cover_wide",		type:"image",	src: "data/img/cover_wide.png"},
 	{name: "cover_wide2",		type:"image",	src: "data/img/cover_wide2.png"},
+	{name: "cover_wide3",		type:"image",	src: "data/img/cover_wide3.png"},
 	{name: "32x32_font",		type:"image",	src: "data/32x32_font.png"},	
 	
 		
