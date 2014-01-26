@@ -518,17 +518,6 @@ game.CookieJarEntity = me.CollectableEntity.extend({
 		// give some score
 		//game.data.score += 250;
 		//game.data.carry = 1;
-
-		/*
-
-		me.state.set(me.state.CREDITS, new game.CreditsScreen());
-
-
-
-		*/
-
-
-
 		
 		//avoid further collision and delete it
 		this.collidable = false;
@@ -688,6 +677,41 @@ game.FlyEnemyEntity = game.PathEnemyEntity.extend({
 		this.renderable.addAnimation ("walk", ["fly_normal.png", "fly_fly.png"]);
 		// dead animatin
 		this.renderable.addAnimation ("dead", ["fly_dead.png"]);
+		
+		// set default one
+		this.renderable.setCurrentAnimation("walk");
+
+		// set the renderable position to bottom center
+		this.anchorPoint.set(0.5, 1.0);		
+	}
+});
+
+/**
+ * An Marshmallow enemy entity
+ * follow a horizontal path defined by the box size in Tiled
+ */
+game.MarshEnemyEntity = game.PathEnemyEntity.extend({	
+	/**
+	 * constructor
+	 */
+	init: function (x, y, settings) {
+		// parent constructor
+		this.parent(x, y, settings);
+	
+		// set a renderable
+		this.renderable = game.texture.createAnimationFromName([
+			"marsh1.png", "marsh2.png", "marsh_squish.png"
+		]);
+
+		// custom animation speed ?
+		if (settings.animationspeed) {
+			this.renderable.animationspeed = settings.animationspeed; 
+		}
+
+		// walking animatin
+		this.renderable.addAnimation ("walk", ["marsh1.png", "marsh2.png"]);
+		// dead animatin
+		this.renderable.addAnimation ("dead", ["marsh_squish.png"]);
 		
 		// set default one
 		this.renderable.setCurrentAnimation("walk");
