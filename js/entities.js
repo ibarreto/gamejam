@@ -101,6 +101,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
             me.audio.playTrack("imagine");
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
+			// set timer here
+			dinoTime = 30 * 75000000000000; //this is approximately 11 seconds 
 			//game.data.kid = 0;
 			if (game.data.carry == 1) {
 					game.data.dinoX = this.pos.x;
@@ -255,6 +257,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
+		dinoTime -= me.timer.getTime();
 		if (game.data.dinoZ != 1) {
 			this.pos.x = game.data.dinoX;
 			this.pos.y = game.data.dinoY;
@@ -289,7 +292,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 			}
 		}
 
-        if (me.input.isKeyPressed("goToReal")) {
+        if (me.input.isKeyPressed("goToReal") || (dinoTime <= 0)) {
                 me.levelDirector.previousLevel();
                 me.audio.stopTrack("imagine");
                 me.audio.playTrack("maintheme");
