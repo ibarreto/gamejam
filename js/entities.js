@@ -386,7 +386,7 @@ game.DinoStuffyEntity = me.CollectableEntity.extend({
 		this.parent(x, y , settings);
 
 		// add the coin sprite as renderable
-		this.renderable = game.texture.createSpriteFromName("coin.png");
+		this.renderable = game.texture.createSpriteFromName("rexstuffy.png");
 		
 		// set the renderable position to bottom center
 		this.anchorPoint.set(0.5, 1.0);
@@ -423,7 +423,7 @@ game.KidStuffyEntity = me.CollectableEntity.extend({
 		this.parent(x, y , settings);
 
 		// add the coin sprite as renderable
-		this.renderable = game.texture.createSpriteFromName("coin.png");
+		this.renderable = game.texture.createSpriteFromName("imaginar_world_kid.png");
 		
 		// set the renderable position to bottom center
 		this.anchorPoint.set(0.5, 1.0);

@@ -2,7 +2,7 @@
 
 {
 	"filename": "coin.png",
-	"frame": {"x":58,"y":211,"w":35,"h":35},
+	"frame": {"x":83,"y":211,"w":35,"h":35},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":35},
@@ -10,7 +10,7 @@
 },
 {
 	"filename": "fly_dead.png",
-	"frame": {"x":147,"y":2,"w":69,"h":32},
+	"frame": {"x":145,"y":95,"w":69,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":69,"h":32},
@@ -18,7 +18,7 @@
 },
 {
 	"filename": "fly_fly.png",
-	"frame": {"x":152,"y":120,"w":69,"h":31},
+	"frame": {"x":147,"y":2,"w":69,"h":31},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":69,"h":31},
@@ -26,15 +26,23 @@
 },
 {
 	"filename": "fly_normal.png",
-	"frame": {"x":95,"y":211,"w":69,"h":32},
+	"frame": {"x":145,"y":61,"w":69,"h":32},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":69,"h":32},
 	"sourceSize": {"w":69,"h":32}
 },
 {
+	"filename": "imaginar_world_kid.png",
+	"frame": {"x":152,"y":129,"w":25,"h":29},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":25,"h":29},
+	"sourceSize": {"w":25,"h":29}
+},
+{
 	"filename": "kidwalk1.png",
-	"frame": {"x":145,"y":61,"w":49,"h":57},
+	"frame": {"x":96,"y":2,"w":49,"h":57},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
@@ -42,7 +50,7 @@
 },
 {
 	"filename": "kidwalk2.png",
-	"frame": {"x":96,"y":2,"w":49,"h":57},
+	"frame": {"x":120,"y":195,"w":49,"h":57},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
@@ -71,6 +79,14 @@
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":57},
 	"sourceSize": {"w":49,"h":57}
+},
+{
+	"filename": "rexstuffy.png",
+	"frame": {"x":58,"y":211,"w":23,"h":36},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":23,"h":36},
+	"sourceSize": {"w":25,"h":36}
 },
 {
 	"filename": "rexwalk1.png",
@@ -122,7 +138,7 @@
 },
 {
 	"filename": "slime_normal.png",
-	"frame": {"x":152,"y":153,"w":43,"h":28},
+	"frame": {"x":152,"y":160,"w":43,"h":28},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":28},
@@ -130,7 +146,7 @@
 },
 {
 	"filename": "slime_walk.png",
-	"frame": {"x":152,"y":183,"w":43,"h":26},
+	"frame": {"x":179,"y":129,"w":43,"h":26},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":43,"h":26},
@@ -143,6 +159,6 @@
 	"format": "RGBA8888",
 	"size": {"w":512,"h":256},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:2a61b1b43b41d6233563c54dff86d0ef:b1a0ad739b10050b2a124c548978674b:88db1022cd6b660616541d2788fcd4f7$"
+	"smartupdate": "$TexturePacker:SmartUpdate:32f1c86b69c7b63d55b8567284d74cbb:1f54afd9fdb4fedef8f264978826b75b:88db1022cd6b660616541d2788fcd4f7$"
 }
 }
