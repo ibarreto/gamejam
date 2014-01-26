@@ -17,7 +17,7 @@ var game = {
 		dinoY : 200,
 		dinoZ : 0,
 		dinoTime : 0,
-		kidTime : 0
+		//kidTime : 750000000000000
 	},
 	
 	/**
