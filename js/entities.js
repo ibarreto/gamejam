@@ -12,7 +12,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		this.alwaysUpdate = true;
 
 		// walking & jumping speed
-		this.setVelocity(3, 8);
+		this.setVelocity(3, 12);
 		this.setFriction(0.4,0);
 		
 		// update the hit box
@@ -55,12 +55,15 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		if (game.data.kid != 1) {
+		if (game.data.kidZ != 1) {
 			this.pos.x = game.data.kidX;
 			this.pos.y = game.data.kidY;
-			game.data.kid = 1;
-			var stuffy2 = new game.DinoStuffyEntity(game.data.dinoX-10, game.data.dinoY+40, me.ObjectSettings);
-            me.game.add(stuffy2, 2);
+			game.data.kidZ = 1;
+			game.data.dinoZ = 0;
+			if (game.data.carry == 0) {
+				var stuffy2 = new game.DinoStuffyEntity(game.data.dinoX+20, game.data.dinoY+70, me.ObjectSettings);
+				me.game.add(stuffy2, 2);
+			}
 		}
 		if (me.input.isKeyPressed('left'))	{
 			this.vel.x -= this.accel.x * me.timer.tick;
@@ -76,7 +79,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			// reset the dblJump flag if off the ground
 			this.mutipleJump = (this.vel.y === 0)?1:this.mutipleJump;
 			
-			if (this.mutipleJump<=2) {
+			if (this.mutipleJump<=1) {
 				// easy 'math' for double jump
 				this.vel.y -= (this.maxVel.y * this.mutipleJump++) * me.timer.tick;
 				me.audio.play("jumpkid", false);
@@ -84,20 +87,25 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		}
 
 		if (me.input.isKeyPressed("goToImaginary")) {
-            me.levelDirector.nextLevel();
+			me.levelDirector.nextLevel();
             me.audio.stopTrack("maintheme");
             me.audio.playTrack("imagine");
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
-			game.data.kid = 0;
-			
+			//game.data.kid = 0;
+			if (game.data.carry == 1) {
+					game.data.dinoX = this.pos.x;
+					game.data.dinoY = this.pos.y;
+			}
             return false;
         }
-		if (me.input.isKeyPressed("drop") && game.data.dino == 1) {
+		if (me.input.isKeyPressed("drop") && game.data.carry == 1) {
 		//if (me.input.isKeyPressed("drop")) {
-            var stuffy = new game.DinoStuffyEntity(this.pos.x-10, this.pos.y+40, me.ObjectSettings);
+            var stuffy = new game.DinoStuffyEntity(this.pos.x+20, this.pos.y+50, me.ObjectSettings);
+			//var stuffy = new game.DinoStuffyEntity(this.pos.x + (this.facing * 10), this.pos.y+40, me.ObjectSettings);
+			
             me.game.add(stuffy, 2);
-			game.data.dino = 0;
+			game.data.carry = 0;
 			game.data.dinoX = this.pos.x;
 			game.data.dinoY = this.pos.y;
 			//game.data.dinoZ = 1;
@@ -225,12 +233,15 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		if (game.data.dino != 1) {
+		if (game.data.dinoZ != 1) {
 			this.pos.x = game.data.dinoX;
 			this.pos.y = game.data.dinoY;
-			game.data.dino = 1;
-			var stuffy2 = new game.KidStuffyEntity(game.data.kidX-10, game.data.kidY+40, me.ObjectSettings);
-            me.game.add(stuffy2, 2);
+			game.data.dinoZ = 1;
+			game.data.kidZ = 0;
+			if (game.data.carry == 0) {
+				var stuffy2 = new game.KidStuffyEntity(game.data.kidX+20, game.data.kidY+50, me.ObjectSettings);
+				me.game.add(stuffy2, 2);
+			}
 		}
 		if (me.input.isKeyPressed('left'))	{
 			this.vel.x -= this.accel.x * me.timer.tick;
@@ -259,14 +270,18 @@ game.DinasaurEntity = me.ObjectEntity.extend({
                 me.audio.playTrack("maintheme");
 				game.data.dinoX = this.pos.x;
 				game.data.dinoY = this.pos.y;
-				game.data.dino = 0;
+				if (game.data.carry == 1) {
+					game.data.kidX = this.pos.x;
+					game.data.kidY = this.pos.y;
+				}
+				//game.data.dino = 0;
                 return false;
         }
-		if (me.input.isKeyPressed("drop") && game.data.kid == 1) {
+		if (me.input.isKeyPressed("drop") && game.data.carry == 1) {
 		//if (me.input.isKeyPressed("drop")) {
-            var stuffy = new game.KidStuffyEntity(this.pos.x-10, this.pos.y+60, me.ObjectSettings);
+            var stuffy = new game.KidStuffyEntity(this.pos.x+20, this.pos.y+70, me.ObjectSettings);
             me.game.add(stuffy, 2);
-			game.data.kid = 0;
+			game.data.carry = 0;
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
 			//game.data.kidZ = 1;
@@ -401,7 +416,7 @@ game.DinoStuffyEntity = me.CollectableEntity.extend({
 		//me.audio.play("cling", false);
 		// give some score
 		game.data.score += 250;
-		game.data.dino = 1;
+		game.data.carry = 1;
 		
 		//avoid further collision and delete it
 		this.collidable = false;
@@ -438,7 +453,7 @@ game.KidStuffyEntity = me.CollectableEntity.extend({
 		//me.audio.play("cling", false);
 		// give some score
 		game.data.score += 250;
-		game.data.kid = 1;
+		game.data.carry = 1;
 		
 		//avoid further collision and delete it
 		this.collidable = false;

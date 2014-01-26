@@ -9,14 +9,13 @@ var game = {
 	data : {
 		// score
 		score : 0,
-		dino : 1,
-		kid : 1,
-		kidX : 0,
-		kidY : 0,
-		//kidZ : 0,
-		dinoX : 0,
-		dinoY : 0
-		//dinoZ : 0
+		carry : 0,
+		kidX : 30,
+		kidY : 300,
+		kidZ : 0,
+		dinoX : 400,
+		dinoY : 200,
+		dinoZ : 0
 	},
 	
 	/**
