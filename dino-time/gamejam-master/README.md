@@ -1,4 +1,0 @@
-gamejam
-=======
-
-Technicolour Dinosaur Adventure

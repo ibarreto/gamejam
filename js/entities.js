@@ -74,7 +74,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			// reset the dblJump flag if off the ground
 			this.mutipleJump = (this.vel.y === 0)?1:this.mutipleJump;
 			
-			if (this.mutipleJump<=1) {
+			if (this.mutipleJump<=2) {
 				// easy 'math' for double jump
 				this.vel.y -= (this.maxVel.y * this.mutipleJump++) * me.timer.tick;
 				me.audio.play("jumpkid", false);
