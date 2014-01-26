@@ -10,7 +10,7 @@
   <image source="imaginarytileset_wip.png" width="640" height="241"/>
  </tileset>
  <tileset firstgid="421" name="collision" tilewidth="32" tileheight="32">
-  <image source="../../../../../Users/dad/Desktop/Tutorial/Tutorial/data/img/map/metatiles32x32.png" width="160" height="32"/>
+  <image source="metatiles32x32.png" width="160" height="32"/>
   <terraintypes>
    <terrain name="solid" tile="-1"/>
   </terraintypes>
