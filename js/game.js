@@ -10,10 +10,13 @@ var game = {
 		// score
 		score : 0,
 		dino : 1,
+		kid : 1,
 		kidX : 0,
 		kidY : 0,
+		kidZ : 0,
 		dinoX : 0,
-		dinoY : 0
+		dinoY : 0,
+		dinoZ : 0
 	},
 	
 	/**
@@ -68,6 +71,7 @@ var game = {
 		me.entityPool.add("FlyEntity", game.FlyEnemyEntity);
 		me.entityPool.add("CoinEntity", game.CoinEntity);
 		me.entityPool.add("DinoStuffyEntity", game.DinoStuffyEntity);
+		me.entityPool.add("KidStuffyEntity", game.KidStuffyEntity);
 		me.input.bindKey(me.input.KEY.W, "goToImaginary", true);
 		me.input.bindKey(me.input.KEY.Q, "goToReal", true);
 		

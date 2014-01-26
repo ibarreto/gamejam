@@ -55,7 +55,11 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		
+		if (game.data.kidZ != 0) {
+			this.pos.x = game.data.kidX;
+			this.pos.y = game.data.kidY;
+			game.data.kidZ = 0;
+		}
 		if (me.input.isKeyPressed('left'))	{
 			this.vel.x -= this.accel.x * me.timer.tick;
 			this.flipX(true);
@@ -85,9 +89,12 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
 		if (me.input.isKeyPressed("drop") && game.data.dino == 1) {
 		//if (me.input.isKeyPressed("drop")) {
-            var stuffy = new game.DinoStuffyEntity(this.pos.x, this.pos.y+90, me.ObjectSettings);
+            var stuffy = new game.DinoStuffyEntity(this.pos.x, this.pos.y+30, me.ObjectSettings);
             me.game.add(stuffy);
 			game.data.dino = 0;
+			game.data.dinoX = this.pos.x;
+			game.data.dinoY = this.pos.y;
+			game.data.dinoZ = 1;
         }
 
 			
@@ -188,6 +195,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		me.input.bindKey(me.input.KEY.Z,	"jump", true);
 		me.input.bindKey(me.input.KEY.UP,	"up");
 		me.input.bindKey(me.input.KEY.DOWN,	"down");
+		me.input.bindKey(me.input.KEY.X,	"drop");
 
 		
 		// set a renderable
@@ -211,7 +219,11 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		
+		if (game.data.dinoZ != 0) {
+			this.pos.x = game.data.dinoX;
+			this.pos.y = game.data.dinoY;
+			game.data.dinoZ = 0;
+		}
 		if (me.input.isKeyPressed('left'))	{
 			this.vel.x -= this.accel.x * me.timer.tick;
 			this.flipX(true);
@@ -239,7 +251,15 @@ game.DinasaurEntity = me.ObjectEntity.extend({
                 me.audio.playTrack("maintheme");
                 return false;
         }
-			
+		if (me.input.isKeyPressed("drop") && game.data.kid == 1) {
+		//if (me.input.isKeyPressed("drop")) {
+            var stuffy = new game.KidStuffyEntity(this.pos.x, this.pos.y+30, me.ObjectSettings);
+            me.game.add(stuffy);
+			game.data.kid = 0;
+			game.data.kidX = this.pos.x;
+			game.data.kidY = this.pos.y;
+			game.data.kidZ = 1;
+        }	
 		// check for collision with environment
 		this.updateMovement();
 		me.game.viewport.follow(this.pos, me.game.viewport.AXIS.BOTH);
@@ -371,6 +391,43 @@ game.DinoStuffyEntity = me.CollectableEntity.extend({
 		// give some score
 		game.data.score += 250;
 		game.data.dino = 1;
+		
+		//avoid further collision and delete it
+		this.collidable = false;
+		me.game.remove(this);
+	}
+	
+});
+
+/**
+ * a kid (collectable) stuffy
+ */
+game.KidStuffyEntity = me.CollectableEntity.extend({	
+	/** 
+	 * constructor
+	 */
+	init: function (x, y, settings) {
+		
+		// call the parent constructor
+		this.parent(x, y , settings);
+
+		// add the coin sprite as renderable
+		this.renderable = game.texture.createSpriteFromName("coin.png");
+		
+		// set the renderable position to bottom center
+		this.anchorPoint.set(0.5, 1.0);
+		
+	},		
+	
+	/** 
+	 * collision handling
+	 */
+	onCollision : function () {
+		// do something when collide
+		//me.audio.play("cling", false);
+		// give some score
+		game.data.score += 250;
+		game.data.kid = 1;
 		
 		//avoid further collision and delete it
 		this.collidable = false;
