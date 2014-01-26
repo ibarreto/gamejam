@@ -106,7 +106,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 
 			dinoTime = 17 * 75000000000000; //this is approximately 11 seconds 
 
-			dinoTime = 17 * 75000000000000; //the first number is the number of seconds 
+			//dinoTime = 17 * 75000000000000; //the first number is the number of seconds 
 
 			//game.data.kid = 0;
 			if (game.data.carry == 1) {
