@@ -170,42 +170,42 @@
 },
 {
 	"filename": "rexwalk1_withkid.png",
-	"frame": {"x":281,"y":181,"w":44,"h":75},
+	"frame": {"x":281,"y":182,"w":48,"h":72},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":75},
 	"sourceSize": {"w":52,"h":75}
 },
 {
 	"filename": "rexwalk2_withkid.png",
-	"frame": {"x":281,"y":86,"w":44,"h":75},
+	"frame": {"x":281,"y":87,"w":48,"h":75},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":75},
 	"sourceSize": {"w":52,"h":75}
 },
 {
 	"filename": "rexwalk3_withkid.png",
-	"frame": {"x":281,"y":1,"w":44,"h":75},
+	"frame": {"x":281,"y":2,"w":48,"h":75},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":75},
 	"sourceSize": {"w":52,"h":75}
 },
 {
 	"filename": "rexwalk4_withkid.png",
-	"frame": {"x":336,"y":1,"w":44,"h":75},
+	"frame": {"x":336,"y":2,"w":48,"h":75},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":75},
 	"sourceSize": {"w":52,"h":75}
 },
 {
 	"filename": "rexwalk5_withkid.png",
-	"frame": {"x":336,"y":86,"w":44,"h":75},
+	"frame": {"x":336,"y":87,"w":48,"h":75},
 	"rotated": false,
 	"trimmed": true,
-	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":75},
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":75},
 	"sourceSize": {"w":52,"h":75}
 },
 {
