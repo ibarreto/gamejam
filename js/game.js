@@ -81,7 +81,7 @@ var game = {
 		me.entityPool.add("KidStuffyEntity", game.KidStuffyEntity);
 
 		me.entityPool.add("CookieJarEntity", game.CookieJarEntity);
-		me.entityPool.add("MarshEnemyEntity", game.MarshEnemyEntity);
+		me.entityPool.add("MarshEntity", game.MarshEnemyEntity);
 
 		me.input.bindKey(me.input.KEY.W, "goToImaginary", true);
 		me.input.bindKey(me.input.KEY.Q, "goToReal", true);

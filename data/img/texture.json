@@ -217,7 +217,7 @@
 	"sourceSize": {"w":31,"h":40}
 },
 {
-	"filename": "slime_dead.png",
+	"filename": "marsh_squish.png",
 	"frame": {"x":2,"y":231,"w":54,"h":8},
 	"rotated": false,
 	"trimmed": false,
@@ -225,20 +225,20 @@
 	"sourceSize": {"w":54,"h":8}
 },
 {
-	"filename": "slime_normal.png",
-	"frame": {"x":148,"y":159,"w":50,"h":29},
+	"filename": "marsh1.png",
+	"frame": {"x":148,"y":159,"w":54,"h":30},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":29},
-	"sourceSize": {"w":50,"h":29}
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":28},
+	"sourceSize": {"w":50,"h":28}
 },
 {
-	"filename": "slime_walk.png",
-	"frame": {"x":179,"y":129,"w":50,"h":29},
+	"filename": "marsh2.png",
+	"frame": {"x":179,"y":129,"w":54,"h":30},
 	"rotated": false,
 	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":29},
-	"sourceSize": {"w":50,"h":29}
+	"spriteSourceSize": {"x":0,"y":0,"w":50,"h":28},
+	"sourceSize": {"w":50,"h":28}
 }],
 "meta": {
 	"app": "http://www.codeandweb.com/texturepacker ",

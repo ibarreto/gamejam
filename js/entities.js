@@ -601,7 +601,7 @@ game.PathEnemyEntity = me.ObjectEntity.extend({
 	onCollision : function (res, obj) {
 		// res.y >0 means touched by something on the bottom
 		// which mean at top position for this one
-		if (this.alive && (obj.friction == 0.3)) {
+		if (this.alive) {
 			// make it dead
 			this.alive = false;
 			// and not collidable anymore
