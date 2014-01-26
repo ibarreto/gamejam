@@ -12,7 +12,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		this.alwaysUpdate = true;
 
 		// walking & jumping speed
-		this.setVelocity(3, 12);
+		this.setVelocity(5, 12);
 		this.setFriction(0.4,0);
 		
 		// update the hit box
