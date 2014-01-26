@@ -110,9 +110,8 @@ game.PlayerEntity = me.ObjectEntity.extend({
         }
 		if (me.input.isKeyPressed("drop") && game.data.carry == 1) {
 		//if (me.input.isKeyPressed("drop")) {
+			this.flipX(false);
             var stuffy = new game.DinoStuffyEntity(this.pos.x+20, this.pos.y+50, me.ObjectSettings);
-			//var stuffy = new game.DinoStuffyEntity(this.pos.x + (this.facing * 10), this.pos.y+40, me.ObjectSettings);
-			
             me.game.add(stuffy, 2);
 			game.data.carry = 0;
 			game.data.dinoX = this.pos.x;
@@ -305,6 +304,7 @@ game.DinasaurEntity = me.ObjectEntity.extend({
         }
 		if (me.input.isKeyPressed("drop") && game.data.carry == 1) {
 		//if (me.input.isKeyPressed("drop")) {
+			this.flipX(false);
             var stuffy = new game.KidStuffyEntity(this.pos.x+20, this.pos.y+70, me.ObjectSettings);
             me.game.add(stuffy, 2);
 			game.data.carry = 0;
