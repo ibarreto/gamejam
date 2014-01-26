@@ -3,12 +3,12 @@ game.EndScreen = me.ScreenObject.extend({
     // constructor
     init: function () {
         this.parent(true);
-      	this.end == null;
+      	this.end = null;
     },
 
     // reset function
     onResetEvent: function () {
-        if (this.end== null) {
+        if (this.end == null) {
             // init stuff if not yet done
             this.end = me.loader.getImage("cover_wide3");
         }

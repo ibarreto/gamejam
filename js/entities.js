@@ -524,6 +524,8 @@ game.CookieJarEntity = me.CollectableEntity.extend({
 		//avoid further collision and delete it
 		this.collidable = false;
 		me.game.remove(this);
+			
+		me.state.set(me.state.END, new game.EndScreen());
 		me.state.change(me.state.END);
 	}
 	
