@@ -55,10 +55,12 @@ game.PlayerEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		if (game.data.kidZ != 0) {
+		if (game.data.kid != 1) {
 			this.pos.x = game.data.kidX;
 			this.pos.y = game.data.kidY;
-			game.data.kidZ = 0;
+			game.data.kid = 1;
+			var stuffy2 = new game.DinoStuffyEntity(game.data.dinoX-10, game.data.dinoY+40, me.ObjectSettings);
+            me.game.add(stuffy2, 2);
 		}
 		if (me.input.isKeyPressed('left'))	{
 			this.vel.x -= this.accel.x * me.timer.tick;
@@ -85,16 +87,20 @@ game.PlayerEntity = me.ObjectEntity.extend({
             me.levelDirector.nextLevel();
             me.audio.stopTrack("maintheme");
             me.audio.playTrack("imagine");
+			game.data.kidX = this.pos.x;
+			game.data.kidY = this.pos.y;
+			game.data.kid = 0;
+			
             return false;
         }
 		if (me.input.isKeyPressed("drop") && game.data.dino == 1) {
 		//if (me.input.isKeyPressed("drop")) {
-            var stuffy = new game.DinoStuffyEntity(this.pos.x, this.pos.y+30, me.ObjectSettings);
-            me.game.add(stuffy);
+            var stuffy = new game.DinoStuffyEntity(this.pos.x-10, this.pos.y+40, me.ObjectSettings);
+            me.game.add(stuffy, 2);
 			game.data.dino = 0;
 			game.data.dinoX = this.pos.x;
 			game.data.dinoY = this.pos.y;
-			game.data.dinoZ = 1;
+			//game.data.dinoZ = 1;
         }
 
 			
@@ -219,10 +225,12 @@ game.DinasaurEntity = me.ObjectEntity.extend({
 		
 	------			*/
 	update : function () {
-		if (game.data.dinoZ != 0) {
+		if (game.data.dino != 1) {
 			this.pos.x = game.data.dinoX;
 			this.pos.y = game.data.dinoY;
-			game.data.dinoZ = 0;
+			game.data.dino = 1;
+			var stuffy2 = new game.KidStuffyEntity(game.data.kidX-10, game.data.kidY+40, me.ObjectSettings);
+            me.game.add(stuffy2, 2);
 		}
 		if (me.input.isKeyPressed('left'))	{
 			this.vel.x -= this.accel.x * me.timer.tick;
@@ -249,16 +257,19 @@ game.DinasaurEntity = me.ObjectEntity.extend({
                 me.levelDirector.previousLevel();
                 me.audio.stopTrack("imagine");
                 me.audio.playTrack("maintheme");
+				game.data.dinoX = this.pos.x;
+				game.data.dinoY = this.pos.y;
+				game.data.dino = 0;
                 return false;
         }
 		if (me.input.isKeyPressed("drop") && game.data.kid == 1) {
 		//if (me.input.isKeyPressed("drop")) {
-            var stuffy = new game.KidStuffyEntity(this.pos.x, this.pos.y+30, me.ObjectSettings);
-            me.game.add(stuffy);
+            var stuffy = new game.KidStuffyEntity(this.pos.x-10, this.pos.y+60, me.ObjectSettings);
+            me.game.add(stuffy, 2);
 			game.data.kid = 0;
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
-			game.data.kidZ = 1;
+			//game.data.kidZ = 1;
         }	
 		// check for collision with environment
 		this.updateMovement();

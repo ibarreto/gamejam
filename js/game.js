@@ -13,10 +13,10 @@ var game = {
 		kid : 1,
 		kidX : 0,
 		kidY : 0,
-		kidZ : 0,
+		//kidZ : 0,
 		dinoX : 0,
-		dinoY : 0,
-		dinoZ : 0
+		dinoY : 0
+		//dinoZ : 0
 	},
 	
 	/**
