@@ -58,11 +58,12 @@ var game = {
 	 */
 	loaded: function ()	{
 		me.state.set(me.state.MENU, new game.TitleScreen());
-	
+		me.state.set(me.state.END, new game.EndScreen());
 		// set the "Play/Ingame" Screen Object
 		me.state.set(me.state.PLAY, new game.PlayScreen());
 
 		me.state.set(me.state.INTRO, new game.IntroScreen());
+	
 		
 		// set the fade transition effect
 		me.state.transition("fade","#FFFFFF", 250);
@@ -76,6 +77,10 @@ var game = {
 		me.entityPool.add("CoinEntity", game.CoinEntity);
 		me.entityPool.add("DinoStuffyEntity", game.DinoStuffyEntity);
 		me.entityPool.add("KidStuffyEntity", game.KidStuffyEntity);
+
+		me.entityPool.add("CookieJarEntity", game.CookieJarEntity);
+		me.entityPool.add("MarshEnemyEntity", game.MarshEnemyEntity);
+
 		me.input.bindKey(me.input.KEY.W, "goToImaginary", true);
 		me.input.bindKey(me.input.KEY.Q, "goToReal", true);
 		
