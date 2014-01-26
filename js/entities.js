@@ -102,7 +102,7 @@ game.PlayerEntity = me.ObjectEntity.extend({
 			game.data.kidX = this.pos.x;
 			game.data.kidY = this.pos.y;
 			// set timer here
-			dinoTime = 30 * 75000000000000; //this is approximately 11 seconds 
+			dinoTime = 17 * 75000000000000; //the first number is the number of seconds 
 			//game.data.kid = 0;
 			if (game.data.carry == 1) {
 					game.data.dinoX = this.pos.x;
