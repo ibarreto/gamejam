@@ -13,6 +13,7 @@ game.resources = [
 	{name: "background",				type:"image",	src: "data/img/background.png"},	
 	{name: "background_imaginary",		type:"image",	src: "data/img/background_imaginary.png"},
 	{name: "cover_wide",		type:"image",	src: "data/img/cover_wide.png"},
+	{name: "cover_wide2",		type:"image",	src: "data/img/cover_wide.png"},
 	{name: "32x32_font",		type:"image",	src: "data/32x32_font.png"},	
 	
 		
@@ -37,6 +38,8 @@ game.resources = [
 	{name: "maintheme",		type: "audio",	src: "data/bgm/",	channel : 1},
 	{name: "imagine",		type: "audio",	src: "data/bgm/",	channel : 1},
 	{name: "technicolour",		type: "audio",	src: "data/bgm/",	channel : 1},
+	{name: "voiceover",		type: "audio",	src: "data/bgm/",	channel : 1},
+	
 	
 	/* Sound effects. 
 	 * @example
