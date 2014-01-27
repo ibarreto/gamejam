@@ -3,12 +3,12 @@ gamejam
 
 Technicolour Dinosaur Adventure
 
-Andrea Budac - Programming & Writing
-Robert Budac - Programming & Level Design
+Andrea Budac - Programming and Writing
+Robert Budac - Programming and Level Design
 Ivan Barreto - Lead Programmer
-Sarah Beck - Art & Visual Design
-Nolan Beck - Level Design & Team Mascot
-Jon Capus - Music & Sound Effects
+Sarah Beck - Art and Visual Design
+Nolan Beck - Level Design and Team Mascot
+Jon Capus - Music and Sound Effects
 
 Developed using melonJS
 
